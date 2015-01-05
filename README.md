@@ -11,7 +11,7 @@ or
     $ npm install https://github.com/upgradeadvice/hubot-coininfo/archive/{VERSION}.tar.gz
 
 ## Example
-
+```
 hubot convert AMOUNT COIN1 COIN2 - Currency Conversion via Cryptsy
 hubot chainz COIN getXXX - Get COIN's height, difficulty, etc
 hubot btce - Get BTC-e exchange for fiat currency (USD,RUR,EUR,GBP,CNH)
@@ -21,10 +21,10 @@ hubot bleutrade COIN - Get COIN-BTC latest exchange data from Bleutrade
 hubot bter COIN - Get COIN-BTC latest exchange data from Bter
 hubot cryptsy COIN - Get COIN-BTC latest exchange data from Cryptsy
 hubot poloniex COIN - Get COIN-BTC latest exchange data from Poloniex
-
+```
 ## Configuration
 
-See [`src/scripts/hubot-coininfo.js`](src/scripts/hubot-coininfo.js).
+See [`src/hubot-coininfo.coffee`](src/hubot-coininfo.coffee).
 
 ## Development
 

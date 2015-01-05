@@ -1,3 +1,7 @@
+# Hubot
+.hubot_history
+.tmp
+
 # Logs
 logs
 *.log
