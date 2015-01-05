@@ -1,0 +1,31 @@
+{
+  "name": "hubot-coininfo",
+  "version": "0.0.1",
+  "description": "A Hubot script that pulls info from various cryptocoin apis.",
+  "main": "index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/upgradeadvice/hubot-coininfo.git"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "bitcoind",
+    "altcoin"
+  ],
+  "author": {
+    "name": "upgradeadvice",
+    "mail": "upgradeadvice@gmail.com",
+    "url": "http://github.com/upgradeadvice"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upgradeadvice/hubot-coininfo/issues"
+  },
+  "homepage": "https://github.com/upgradeadvice/hubot-coininfo",
+  "devDependencies": {},
+  "peerDependencies": {
+    "hubot": "2.x"
+  },
+  "dependencies": {}
+}
