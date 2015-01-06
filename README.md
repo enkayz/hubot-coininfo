@@ -19,6 +19,7 @@ hubot allcoin COIN - Get COIN-BTC latest exchange data from Allcoin
 hubot bittrex COIN - Get COIN-BTC latest exchange data from Bittrex
 hubot bleutrade COIN - Get COIN-BTC latest exchange data from Bleutrade
 hubot bter COIN - Get COIN-BTC latest exchange data from Bter
+hubot ccex COIN - Get COIN-BTC latest exchange data from C-Cex
 hubot cryptsy COIN - Get COIN-BTC latest exchange data from Cryptsy
 hubot poloniex COIN - Get COIN-BTC latest exchange data from Poloniex
 ```
