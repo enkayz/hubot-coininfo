@@ -155,7 +155,7 @@ module.exports = (robot) ->
       avg = d.ticker.avg.toFixed(8)
       updated = d.ticker.updated
       date = new Date(updated*1000).toUTCString()
-      msg.reply "#[OK] {cU}-BTC on C-CEX [Last: #{last}] -
+      msg.reply "[OK] #{cU}-BTC on C-CEX [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Avg: #{avg}]"
       # - [Updated: #{date}]
 
@@ -177,7 +177,7 @@ module.exports = (robot) ->
       high = d.data["24hr"].price_high.toFixed(8)
       low = d.data["24hr"].price_low.toFixed(8)
       vol = d.data["24hr"].volume
-      msg.reply "#[OK] {c}-BTC on Cryptsy [Last: #{last}] -
+      msg.reply "[OK] #{c}-BTC on Cryptsy [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #Bter
