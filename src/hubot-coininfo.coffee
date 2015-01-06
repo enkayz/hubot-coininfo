@@ -111,7 +111,7 @@ module.exports = (robot) ->
       high = d.result[0].High.toFixed(8)
       low = d.result[0].Low.toFixed(8)
       vol = d.result[0].Volume
-      msg.reply "#[OK] {cU}-BTC on Bittrex [Last: #{last}] -
+      msg.reply "[OK] #{cU}-BTC on Bittrex [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #Bleutrade
