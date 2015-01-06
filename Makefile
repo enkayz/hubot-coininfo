@@ -19,6 +19,11 @@ all: build
 	test:
 	@./node_modules/mocha/bin/mocha \
 	--reporter $(REPORTER) \
-	test/*.coffee
+	spec/*.coffee
+	
+	coveralls:
+	istanbul cover ./node_modules/mocha/bin/_mocha \
+	--report lcovonly -- -R spec && cat ./coverage/lcov.info \
+	| ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 
-	.PHONY: build clean watch test
+	.PHONY: build clean watch test coveralls

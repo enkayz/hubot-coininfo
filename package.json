@@ -1,6 +1,6 @@
 {
   "name": "hubot-coininfo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Hubot script that pulls info from various cryptocoin apis.",
   "main": "index.js",
   "repository": {
@@ -36,7 +36,9 @@
     "chai-spies": "*",
     "gulp-clean": "*",
     "gulp-coffeelint": "*",
-    "gulp-watch": "*"
+    "gulp-watch": "*",
+    "coveralls": "^2.11.2",
+    "mocha-lcov-reporter": "0.0.1"
   },
   "scripts": {
     "test": "gulp mocha"
