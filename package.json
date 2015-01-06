@@ -2,7 +2,7 @@
   "name": "hubot-coininfo",
   "version": "0.0.1",
   "description": "A Hubot script that pulls info from various cryptocoin apis.",
-  "main": "index.coffee",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/upgradeadvice/hubot-coininfo.git"
@@ -23,9 +23,23 @@
     "url": "https://github.com/upgradeadvice/hubot-coininfo/issues"
   },
   "homepage": "https://github.com/upgradeadvice/hubot-coininfo",
-  "devDependencies": {},
-  "peerDependencies": {
-    "hubot": "2.x"
+  "devDependencies": {
+    "hubot": "*",
+    "gulp": "*",
+    "coffee-script": "*",
+    "gulp-coffee": "*",
+    "gulp-util": "*",
+    "hubot-mock-adapter": "*",
+    "gulp-mocha": "*",
+    "nock": "*",
+    "chai": "*",
+    "chai-spies": "*",
+    "gulp-clean": "*",
+    "gulp-coffeelint": "*",
+    "gulp-watch": "*"
+  },
+  "scripts": {
+    "test": "gulp mocha"
   },
   "dependencies": {}
 }

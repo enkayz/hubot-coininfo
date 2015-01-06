@@ -8,7 +8,7 @@
 # Commands:
 #   hubot convert AMOUNT COIN1 COIN2 - Currency Conversion via Cryptsy
 #   hubot chainz COIN getXXX - Get COIN's height, difficulty, etc
-#   hubot btce - Get BTC-e exchange for fiat currency (USD,RUR,EUR,GBP,CNH)
+#   hubot btce CURR - Get BTC-e exchange for fiat currency (USD,RUR,EUR,GBP,CNH)
 #   hubot allcoin COIN - Get COIN-BTC latest exchange data from Allcoin
 #   hubot bittrex COIN - Get COIN-BTC latest exchange data from Bittrex
 #   hubot bleutrade COIN - Get COIN-BTC latest exchange data from Bleutrade
@@ -43,7 +43,8 @@ module.exports = (robot) ->
         else if res.statusCode isnt 200
           msg.reply "#{c} or #{q} not supported. Error: #{res.statusCode}"
         else
-          msg.reply "#{c} #{q} - #{chainz} as listed on chainz.cryptoid.info"
+          msg.reply "[OK] #{c} #{q} - #{chainz}
+           as listed on chainz.cryptoid.info"
 
   #allcoin
   robot.respond /allcoin (.*)/i, (msg) ->
@@ -64,7 +65,7 @@ module.exports = (robot) ->
       high = d.data.max_24h_price
       low = d.data.min_24h_price
       avg = d.data.avg_24h
-      msg.reply "#{cU}-BTC on Allcoin [Last: #{last}] -
+      msg.reply "[OK] #{cU}-BTC on Allcoin [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Avg: #{avg}]"
 
   #btce
@@ -88,7 +89,7 @@ module.exports = (robot) ->
       avg = d["btc_#{c}"].avg.toFixed(2)
       updated = d["btc_#{c}"].updated
       date = new Date(updated*1000).toUTCString()
-      msg.reply "BTC-#{cU} on BTC-e [Last: #{last}] -
+      msg.reply "[OK] BTC-#{cU} on BTC-e [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Avg: #{avg}] - [Updated: #{date}]"
 
   #Bittrex Last Trade Price
@@ -110,7 +111,7 @@ module.exports = (robot) ->
       high = d.result[0].High.toFixed(8)
       low = d.result[0].Low.toFixed(8)
       vol = d.result[0].Volume
-      msg.reply "#{cU}-BTC on Bittrex [Last: #{last}] -
+      msg.reply "#[OK] {cU}-BTC on Bittrex [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #Bleutrade
@@ -130,7 +131,7 @@ module.exports = (robot) ->
       high = d.result[0].High
       low = d.result[0].Low
       vol = d.result[0].Volume
-      msg.reply "#{c}-BTC on Bleutrade [Last: #{last}] -
+      msg.reply "[OK] #{c}-BTC on Bleutrade [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #c-cex
@@ -154,7 +155,7 @@ module.exports = (robot) ->
       avg = d.ticker.avg.toFixed(8)
       updated = d.ticker.updated
       date = new Date(updated*1000).toUTCString()
-      msg.reply "#{cU}-BTC on C-CEX [Last: #{last}] -
+      msg.reply "#[OK] {cU}-BTC on C-CEX [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Avg: #{avg}]"
       # - [Updated: #{date}]
 
@@ -176,7 +177,7 @@ module.exports = (robot) ->
       high = d.data["24hr"].price_high.toFixed(8)
       low = d.data["24hr"].price_low.toFixed(8)
       vol = d.data["24hr"].volume
-      msg.reply "#{c}-BTC on Cryptsy [Last: #{last}] -
+      msg.reply "#[OK] {c}-BTC on Cryptsy [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #Bter
@@ -198,7 +199,7 @@ module.exports = (robot) ->
       high = d.high
       low = d.low
       avg = d.avg
-      msg.reply "#{cU}-BTC on Bter [Last: #{last}] -
+      msg.reply "[OK] #{cU}-BTC on Bter [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Avg: #{avg}]"
 
   #poloniex
@@ -219,7 +220,7 @@ module.exports = (robot) ->
       high = d["BTC_#{c}"].high24hr
       low = d["BTC_#{c}"].low24hr
       vol = d["BTC_#{c}"].baseVolume
-      msg.reply "BTC-#{c} on Poloniex [Last: #{last}] -
+      msg.reply "[OK] BTC-#{c} on Poloniex [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
   #convert
@@ -258,4 +259,4 @@ module.exports = (robot) ->
       change = d.ticker.change
       a = parseFloat(price)*parseFloat(amount)
       finalAmount = a.toFixed(8)
-      msg.reply "#{amount} #{c1} is worth #{finalAmount} #{c2} [#{change}]"
+      msg.reply "[OK] #{amount} #{c1} is worth #{finalAmount} #{c2} [#{change}]"
