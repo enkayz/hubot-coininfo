@@ -37,12 +37,7 @@ See [`src/hubot-coininfo.coffee`](src/hubot-coininfo.coffee).
 
 ## Author
 
-
-coinlib used:
-https://github.com/int6/coinlib
-boilerplate used:
-https://github.com/bouzuya/hubot-script-boilerplate
-
+upgradeadvice
 
 ## Badges
 
