@@ -13,8 +13,10 @@
 #   hubot bittrex COIN - Get COIN-BTC latest exchange data from Bittrex
 #   hubot bleutrade COIN - Get COIN-BTC latest exchange data from Bleutrade
 #   hubot bter COIN - Get COIN-BTC latest exchange data from Bter
+#   hubot ccex COIN - Get COIN-BTC latest exchange data from C-Cex
 #   hubot cryptsy COIN - Get COIN-BTC latest exchange data from Cryptsy
 #   hubot poloniex COIN - Get COIN-BTC latest exchange data from Poloniex
+#
 # Author:
 #   upgradeadvice
 #
@@ -47,16 +49,15 @@ module.exports = (robot) ->
   robot.respond /allcoin (.*)/i, (msg) ->
     c = msg.match[1].toUpperCase()
     cU = c.toUpperCase()
-    #u = "https://www.allcoin.com/api2/pair/#{c}_BTC"
-    u = "http://myhttp.info/"
+    u = "https://www.allcoin.com/api2/pair/#{c}_BTC"
     msg.robot.http(u).headers(h).get() (err, res, body) ->
       try
         d = JSON.parse(body)
         if not d.data.trade_price
-          msg.reply "No results for #{cU}", body
+          msg.reply "No results for #{cU}"
           return
       catch err
-        msg.reply "No results for #{cU}", body
+        msg.reply "No results for #{cU}"
         return
       d = JSON.parse(body)
       last = d.data.trade_price
@@ -132,7 +133,7 @@ module.exports = (robot) ->
       msg.reply "#{c}-BTC on Bleutrade [Last: #{last}] -
       [High: #{high}] - [Low: #{low}] - [Vol: #{vol}]"
 
-# c-cex
+  #c-cex
   robot.respond /ccex (.*)/i, (msg) ->
     c = msg.match[1].toLowerCase()
     cU = c.toUpperCase()
